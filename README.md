@@ -11,7 +11,7 @@ Our shell works as follows:
 - Call the default function of that command
 - Return the result
 
-* Its syntax would be as follows:
+Its syntax would be as follows:
 
 		1	  2		   3		 	4
 	command name {arguments} {pipe or redirection} {others arguments}

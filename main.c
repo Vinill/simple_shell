@@ -1,17 +1,22 @@
 #include "main.h"
 
+/**
+ * main - simple and basic shell
+ * Return: return the size of the buffer
+ */
+
 int main(void)
 {
-        char *tokens[16], *buffer = NULL, *tok = NULL;
-        ssize_t bufsize = 0;
-        ssize_t characters;
-        int i = 0;
+	char *tokens[16], *buffer = NULL, *token = NULL;
+	ssize_t bufsize = 0;
+	ssize_t characters;
+	int i = 0;
 	int var;
 
-        while (1)
-        {
-                printf("$ ");
-                characters = getline(&buffer, &bufsize, stdin);
+	while (1)
+	{
+		printf("$ ");
+		characters = getline(&buffer, &bufsize, stdin);
 		buffer[strlen(buffer) - 1] = '\0';
 		if (characters == -1)
 		{
@@ -19,16 +24,17 @@ int main(void)
 			break;
 		}
 		i = 0;
-		printf("%s\n",buffer);
-		tok = strtok(buffer, " \n");
-                while (tok != NULL)
-                {
-			tokens[i] = tok;
-                        tok = strtok(NULL, " ");
+		printf("%s\n", buffer);
+		token = strtok(buffer, " \n");
+		while (token != NULL)
+		{
+			tokens[i] = token;
+			token = strtok(NULL, " ");
 			i++;
-                }
+		}
 		execute(tokens);
-        }
-        free(buffer);
-        return (bufsize);
+		free(token);
+	}
+	free(buffer);
+	return (bufsize);
 }

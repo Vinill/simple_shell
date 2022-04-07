@@ -1,8 +1,14 @@
 #include "main.h"
 
+/**
+ * execute - Function in charge of looking for a given command,
+ * if it finds it, it 'forks' it and executes it.
+ * @cmd: given command.
+ * Return: If the execute function works correctly, 0 will be returned.
+ */
+
 int execute(char **cmd)
 {
-
 	pid_t child_pid;
 	int status;
 
@@ -23,6 +29,5 @@ int execute(char **cmd)
 	}
 	else
 		wait(&status);
-
 	return (0);
 }

@@ -7,7 +7,8 @@
 
 int main(void)
 {
-	char *tokens[16], *buffer = NULL, *token = NULL;
+	char *tokens[1024];
+	char *buffer = NULL, *token = NULL;
 	ssize_t bufsize = 0;
 	ssize_t characters;
 	int i = 0;
@@ -23,14 +24,17 @@ int main(void)
 			printf("\n");
 			break;
 		}
-		else if (strcmp(buffer, "exit") == 0)
+		else if(strcmp(buffer, "exit") == 0) /*exit*/
 			break;
 		i = 0;
 		token = strtok(buffer, " \n");
+		
+
 		while (token != NULL)
 		{
 			tokens[i] = token;
 			tokens[i + 1] = NULL;
+
 			token = strtok(NULL, " ");
 			i++;
 		}

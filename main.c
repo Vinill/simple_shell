@@ -23,12 +23,14 @@ int main(void)
 			printf("\n");
 			break;
 		}
+		else if (strcmp(buffer, "exit") == 0)
+			break;
 		i = 0;
-		printf("%s\n", buffer);
 		token = strtok(buffer, " \n");
 		while (token != NULL)
 		{
 			tokens[i] = token;
+			tokens[i + 1] = NULL;
 			token = strtok(NULL, " ");
 			i++;
 		}

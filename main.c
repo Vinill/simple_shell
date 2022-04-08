@@ -13,6 +13,11 @@ int main(void)
 	int i = 0;
 	int var;
 
+if (isatty (1))
+	    fprintf (stdout, "Outputting to a terminal.");
+else
+	    fprintf (stdout, "Not outputting to a terminal.");
+
 	while (1)
 	{
 		printf("$ ");

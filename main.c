@@ -12,7 +12,7 @@ int main(void)
 	size_t bufsize = 0;
 	long int characters;
 	int i = 0;
-	
+
 
 	while (1)
 	{
@@ -26,6 +26,10 @@ int main(void)
 		}
 		else if (_strcmp(buffer, "exit") == 0) /*exit*/
 			break;
+
+		else if (_strcmp(buffer, "env") == 0) /*env*/
+			_getenv();
+
 		i = 0;
 
 		token = strtok(buffer, " \n");

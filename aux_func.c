@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 
 /**
 * _strlen - returns the length of a string.
@@ -41,3 +41,38 @@ int _strcmp(char *s1, char *s2)
 	val = s1[cont] - s2[cont];
 	return (val);
 }
+
+
+
+
+/**
+* env - prints the current environment
+* @s: environment
+* 
+* 
+* Return: Always 0 (Success)
+*/
+
+
+
+
+
+
+
+
+int _getenv(void)
+
+{
+ 	
+	extern char **environ;
+
+	char **s = environ;
+
+
+  for (; *s; s++) {
+    printf("%s\n", *s);
+  }
+
+  return 0;
+}
+

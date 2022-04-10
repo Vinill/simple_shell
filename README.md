@@ -18,7 +18,7 @@ Its syntax would be as follows:
 
 For example:
 
-	 1   2    3       4	
+	 1   2    3       4
 	ls {-l } {>} {file_name}
 
 * In the main function of our shell are the following calls.

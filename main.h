@@ -12,7 +12,12 @@ int _strcmp(char *s1, char *s2);
 int execute(char **cmd);
 int exit_func(char command);
 int _strlen(char *s);
-int _getenv(void);
+int print_env(void);
+int main(void);
+char *get_env(const char *name);
+char *get_path(char *command);
+
+// declare environ as extern
+extern char** environ;
 
 #endif
-

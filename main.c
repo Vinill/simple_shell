@@ -13,12 +13,6 @@ int main(void)
 	long int characters;
 	int i = 0;
 
-
-if (isatty (1))
-	    fprintf (stdout, "Outputting to a terminal.");
-else
-	    fprintf (stdout, "Not outputting to a terminal.");
-
 	while (1)
 	{
 		printf("$ ");
@@ -33,19 +27,18 @@ else
 			break;
 
 		else if (_strcmp(buffer, "env") == 0) /*env*/
-			_getenv();
+			print_env();
 
 		i = 0;
 
-		token = strtok(buffer, " \n");
-
+		token = strtok(buffer, " \t\n");
 
 		while (token != NULL)
 		{
 			tokens[i] = token;
 			tokens[i + 1] = NULL;
 
-			token = strtok(NULL, " ");
+			token = strtok(NULL, " \t\n");
 			i++;
 		}
 		execute(tokens);

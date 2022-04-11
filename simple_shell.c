@@ -20,8 +20,7 @@ int main(void)
 		buffer = NULL;
 		bufsize = 0;
 		characters = getline(&buffer, &bufsize, stdin);
-		if (buffer[0] == '\n')
-			continue;
+		
 		if (characters == -1)
 		{
 

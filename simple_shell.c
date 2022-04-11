@@ -36,6 +36,7 @@ int main(void)
 		execute(tokens);
 		free(token);
 	}
+	write(1, "exit\n", 6);
 	free(buffer);
 	return (bufsize);
 }

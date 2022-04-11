@@ -3,7 +3,7 @@
 /**
 * get_env - prints the current environment
 *
-*
+* @name: Var of type char
 *
 * Return: Always 0 (Success)
 */

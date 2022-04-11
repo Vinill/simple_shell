@@ -2,7 +2,7 @@
 
 /**
 * get_env - prints the current environment
-*
+* @name : comando recibido
 *
 *
 * Return: Always 0 (Success)

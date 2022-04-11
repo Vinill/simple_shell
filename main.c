@@ -15,30 +15,28 @@ int main(void)
 
 	while (1)
 	{
-		printf("$ ");
+		write(1, "$ ", 2);
 		characters = getline(&buffer, &bufsize, stdin);
 		buffer[_strlen(buffer) - 1] = '\0';
-		if (characters == - 1)
+		if (characters == -1)
 		{
-			printf("\n");
+			
 			break;
 		}
 		else if (_strcmp(buffer, "exit") == 0) /*exit*/
 			break;
 
 		else if (_strcmp(buffer, "env") == 0) /*env*/
-			print_env();
+			_getenv();
 
 		i = 0;
-
-		token = strtok(buffer, " \t\n");
-
+		token = strtok(buffer, " \n");
 		while (token != NULL)
 		{
 			tokens[i] = token;
 			tokens[i + 1] = NULL;
 
-			token = strtok(NULL, " \t\n");
+			token = strtok(NULL, " ");
 			i++;
 		}
 		execute(tokens);

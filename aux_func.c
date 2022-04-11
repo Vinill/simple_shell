@@ -8,13 +8,16 @@
 */
 
 int _strlen(char *s)
-{
-	int c = 0;
 
-	while (s[c] != '\0')
-		c++;
-	return (c);
+{
+int c = 0;
+while (s[c] != '\0')
+{
+c++;
 }
+return (c);
+}
+
 
 /**
 * _strcmp - compares two strings.
@@ -25,29 +28,53 @@ int _strlen(char *s)
 */
 
 int _strcmp(char *s1, char *s2)
-{
-	int val, cont = 0;
 
+{
+	int cont, val;
+
+	cont = 0;
 	while (s1[cont] == s2[cont] && s1[cont] != '\0')
+	{
 		cont++;
+	}
 
 	val = s1[cont] - s2[cont];
 	return (val);
 }
 
+
+
+
 /**
- * _getenv -  function that prints the current environment
- * env - prints the current environment
- * s: environment
- * Return: Always 0 (Success)
+* _getenv - prints the current environment
+* @s: environment
+*
+*
+* Return: Always 0 (Success)
 */
 
-int print_env(void)
+
+
+
+
+
+
+
+int _getenv(void)
+
 {
+
 	extern char **environ;
+
 	char **s = environ;
 
 	for (; *s; s++)
-		printf("%s\n", *s);
-	return (0);
+
+	{
+
+	printf("%s\n\n", *s);
+	}
+
+return (0);
 }
+

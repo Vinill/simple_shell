@@ -21,7 +21,7 @@ int execute(char **cmd)
 	}
 	else if (child_pid == 0)
 	{
-		if (execvp(cmd[0], cmd) == -1)
+		if (execve(cmd[0], cmd, NULL) == -1)
 		{
 			perror("Error");
 			exit(-1);

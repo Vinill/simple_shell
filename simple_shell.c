@@ -20,19 +20,17 @@ int main(void)
 		buffer = NULL;
 		bufsize = 0;
 		characters = getline(&buffer, &bufsize, stdin);
-		buffer[_strlen(buffer) - 1] = '\0';
 		if (characters == -1)
 		{
 
 			break;
 		}
-		else if (_strcmp(buffer, "exit") == 0) /*exit*/
-			break;
-
-		
-
-		i = 0;
+		/* buffer[_strlen(buffer) - 1] = '\0'; */
 		token = strtok(buffer, " \n\t");
+		if (_strcmp(token, "exit") == 0) /*exit*/
+			break;
+		
+		i = 0;
 		while (token != NULL)
 		{
 			tokens[i] = token;
@@ -42,9 +40,8 @@ int main(void)
 			i++;
 		}
 		execute(tokens);
-		free(token);
+		free(buffer);
 	}
-	write(1, "exit\n", 6);
 	free(buffer);
 	return (bufsize);
 }

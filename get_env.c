@@ -1,16 +1,35 @@
 #include "main.h"
 
+/**
+* get_env - prints the current environment
+*
+*
+*
+* Return: Always 0 (Success)
+*/
+
+
+
 char *get_env(const char *name)
+
 {
-	int i;
-	size_t l = strlen(name);
+	int i = 0;
+	char *var = NULL, *val = NULL, *res;
 
-	if (!environ || !*name || strchr(name, '=')) 
-		return (NULL);
+	while (environ[i] != NULL)
 
-	for (i = 0; environ[i] && (strncmp(name, environ[i], l) || environ[i][l] != '='); i++);
-
-	if (environ[i])
-		return (environ[i] + l + 1);
-	return (NULL);
+		{
+		var = strdup(environ[i]);
+		res = strtok(var, "="); /**Separar el nombre de var del valor*/
+		if (strcmp(res, name) == 0) /**Se encontro el nombre var*/
+			{
+			res = strtok(NULL, "=");
+			val = strdup(res);
+			free(var);
+			return (val); /**Devolver solo el valor de var */
+			}
+		free(var); /** No se encontro el nombre*/
+		i++;
+}
+return (NULL);
 }

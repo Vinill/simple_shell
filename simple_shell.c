@@ -15,6 +15,7 @@ int main(void)
 
 	while (1)
 	{
+		if (isatty(0)) 
 		write(1, "$ ", 2);
 		characters = getline(&buffer, &bufsize, stdin);
 		buffer[_strlen(buffer) - 1] = '\0';

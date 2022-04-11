@@ -15,20 +15,14 @@ int main(void)
 
 	while (1)
 	{
-		if (isatty(0)) 
+		if (isatty(0))
 		write(1, "$ ", 2);
 		characters = getline(&buffer, &bufsize, stdin);
 		buffer[_strlen(buffer) - 1] = '\0';
 		if (characters == -1)
-		{
-
 			break;
-		}
 		else if (_strcmp(buffer, "exit") == 0) /*exit*/
 			break;
-
-		
-
 		i = 0;
 		token = strtok(buffer, " \n\t");
 		while (token != NULL)
@@ -36,7 +30,7 @@ int main(void)
 			tokens[i] = token;
 			tokens[i + 1] = NULL;
 
-			token = strtok(NULL, " ");
+			token = strtok(NULL, " \n\t");
 			i++;
 		}
 		execute(tokens);
@@ -45,4 +39,3 @@ int main(void)
 	free(buffer);
 	return (bufsize);
 }
-

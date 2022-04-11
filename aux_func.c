@@ -64,7 +64,7 @@ int _getenv(void)
 
 {
 
-	extern char **environ;
+	
 
 	char **s = environ;
 

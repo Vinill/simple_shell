@@ -20,12 +20,14 @@ int main(void)
 		buffer = NULL;
 		bufsize = 0;
 		characters = getline(&buffer, &bufsize, stdin);
+		if (buffer[0] == '\n')
+			continue;
 		if (characters == -1)
 		{
 
 			break;
 		}
-		/* buffer[_strlen(buffer) - 1] = '\0'; */
+		buffer[_strlen(buffer) - 1] = '\0';
 		token = strtok(buffer, " \n\t");
 		if (_strcmp(token, "exit") == 0) /*exit*/
 			break;
@@ -43,6 +45,6 @@ int main(void)
 		free(buffer);
 	}
 	free(buffer);
-	return (0);
+	return (bufsize);
 }
 

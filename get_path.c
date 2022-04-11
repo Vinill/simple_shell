@@ -1,33 +1,34 @@
 #include "main.h"
 
 /**
-* char get_path(void)
+* get_path - Function that gets the path of a variable
+* @command: comando recibido
+* Return: 0
 *
 */
 
 char *get_path(char *command)
 {
-	char *PATH = getenv("PATH");
-	char *cpy = strdup(PATH), *concatenated;
-	char *token, *absolute;
+	char *path, *value, *var, *var2;
 	struct stat st;
-	token = strtok(cpy, ':');
-	concatenated = strncmp("/", fileno);
-	while (token != NULL)
+
+	path = _getenv("PATH");
+	value = strtok(path, ":");
+
+	while (value != NULL)
 	{
-		absolute = strncmp(token, concatenated);
-		if (stat(absolute, &st) == 0)
+		var = strcat(value, "/");
+		var2 = strcat(var, command);
+		if (stat(var2, &st) == 0)
 		{
-			free(PATH);
-			free(cpy);
-			free(concatenated);
-			return (absolute);
+			free(var);
+			free(path);
+			return (var2);
 		}
-		token = strtok(NULL, ':');
-		free(absolute);
+		value = strtok(NULL, ":");
+		free(var2);
 	}
-	free(PATH);
-	free(concatenated);
-	free(cpy);
+	free(var);
+	free(path);
 	return (NULL);
 }

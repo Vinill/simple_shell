@@ -27,7 +27,7 @@ int main(void)
 
 			break;
 		}
-		buffer[_strlen(buffer) - 1] = '\0';
+		/*buffer[_strlen(buffer) - 1] = '\0';*/
 		token = strtok(buffer, " \n\t");
 		if (_strcmp(token, "exit") == 0) /*exit*/
 			break;

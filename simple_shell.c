@@ -20,7 +20,7 @@ int main(void)
 		buffer[_strlen(buffer) - 1] = '\0';
 		if (characters == -1)
 		{
-			
+	
 			break;
 		}
 		else if (_strcmp(buffer, "exit") == 0) /*exit*/
@@ -45,3 +45,4 @@ int main(void)
 	free(buffer);
 	return (bufsize);
 }
+

@@ -10,17 +10,16 @@ int main(void)
 	size_t bufsize = 0;
 	int characters;
 	int i = 0;
+
 	while (1)
 	{
-		if (isatty(0)) 
-		write(1, "$ ", 2);
+		if (isatty(0))
+			write(1, "$ ", 2);
 		buffer = NULL;
 		bufsize = 0;
 		characters = getline(&buffer, &bufsize, stdin);
 		if (characters == -1)
-		{
 			break;
-		}
 		/* buffer[_strlen(buffer) - 1] = '\0'; */
 		token = strtok(buffer, " \n\t");
 		if (!token || (_strcmp(token, "exit") == 0)) /*exit*/

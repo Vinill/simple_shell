@@ -15,19 +15,17 @@ int main(void)
 
 	while (1)
 	{
-		if (isatty(0)) 
-		write(1, "$ ", 2);
+		if (isatty(0))
+			write(1, "$ ", 2);
 		characters = getline(&buffer, &bufsize, stdin);
 		buffer[_strlen(buffer) - 1] = '\0';
 		if (characters == -1)
-		{
-
-			break;
-		}
-		else if (_strcmp(buffer, "exit") == 0) /*exit*/
 			break;
 
-		else if (_strcmp(buffer, "env") == 0)
+		else if (_strcmp(buffer, "exit") == 0) /**exit*/
+			break;
+
+		else if (_strcmp(buffer, "env") == 0) /**env*/
 			_getenv();
 
 		i = 0;
@@ -36,7 +34,6 @@ int main(void)
 		{
 			tokens[i] = token;
 			tokens[i + 1] = NULL;
-
 			token = strtok(NULL, " ");
 			i++;
 		}
@@ -46,4 +43,3 @@ int main(void)
 	free(buffer);
 	return (bufsize);
 }
-

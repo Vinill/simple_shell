@@ -2,8 +2,13 @@
 
 /**
 * get_env - prints the current environment
+<<<<<<< HEAD
 *
 * @name: Var of type char
+=======
+* @name : comando recibido
+*
+>>>>>>> f8764393015552d595979be8585509591da13d84
 *
 * Return: Always 0 (Success)
 */

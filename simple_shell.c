@@ -15,6 +15,7 @@ int main(void)
 
 	while (1)
 	{
+		if (isatty(0)) 
 		write(1, "$ ", 2);
 		characters = getline(&buffer, &bufsize, stdin);
 		buffer[_strlen(buffer) - 1] = '\0';
@@ -26,8 +27,7 @@ int main(void)
 		else if (_strcmp(buffer, "exit") == 0) /*exit*/
 			break;
 
-		else if (_strcmp(buffer, "env") == 0) /*env*/
-			_getenv();
+		
 
 		i = 0;
 		token = strtok(buffer, " \n");

@@ -30,7 +30,7 @@ int main(void)
 		
 
 		i = 0;
-		token = strtok(buffer, " \n");
+		token = strtok(buffer, " \n\t");
 		while (token != NULL)
 		{
 			tokens[i] = token;

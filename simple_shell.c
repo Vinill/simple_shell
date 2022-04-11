@@ -43,6 +43,6 @@ int main(void)
 		free(buffer);
 	}
 	free(buffer);
-	return (bufsize);
+	return (0);
 }
 

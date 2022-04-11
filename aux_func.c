@@ -47,7 +47,7 @@ int _strcmp(char *s1, char *s2)
 
 /**
 * _getenv - prints the current environment
-* @s: environment
+* 
 *
 *
 * Return: Always 0 (Success)

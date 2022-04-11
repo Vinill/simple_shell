@@ -1,10 +1,8 @@
 #include "main.h"
-
 /**
  * main - simple and basic shell
  * Return: return the size of the buffer
  */
-
 int main(void)
 {
 	char *tokens[1024];
@@ -12,7 +10,6 @@ int main(void)
 	size_t bufsize = 0;
 	int characters;
 	int i = 0;
-
 	while (1)
 	{
 		if (isatty(0)) 
@@ -20,13 +17,11 @@ int main(void)
 		buffer = NULL;
 		bufsize = 0;
 		characters = getline(&buffer, &bufsize, stdin);
-		
 		if (characters == -1)
 		{
-
 			break;
 		}
-		/*buffer[_strlen(buffer) - 1] = '\0';*/
+		/* buffer[_strlen(buffer) - 1] = '\0'; */
 		token = strtok(buffer, " \n\t");
 		if (_strcmp(token, "exit") == 0) /*exit*/
 			break;
@@ -36,7 +31,6 @@ int main(void)
 		{
 			tokens[i] = token;
 			tokens[i + 1] = NULL;
-
 			token = strtok(NULL, " \n\t");
 			i++;
 		}
@@ -44,6 +38,5 @@ int main(void)
 		free(buffer);
 	}
 	free(buffer);
-	return (bufsize);
+	return (0);
 }
-

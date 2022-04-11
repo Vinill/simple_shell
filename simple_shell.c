@@ -27,8 +27,7 @@ int main(void)
 		else if (_strcmp(buffer, "exit") == 0) /*exit*/
 			break;
 
-		else if (_strcmp(buffer, "env") == 0)
-			_getenv();
+		
 
 		i = 0;
 		token = strtok(buffer, " \n");

@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <errno.h>
 /**
  * execute - Function in charge of looking for a given command,
  * if it finds it, it 'forks' it and executes it.
@@ -10,7 +10,7 @@
 int execute(char **cmd)
 {
 	pid_t child_pid;
-	int status;
+	int status = 0;
 
 	child_pid = fork();
 
@@ -29,5 +29,5 @@ int execute(char **cmd)
 	}
 	else
 		wait(&status);
-	return (0);
+	return (WEXITSTATUS(status));
 }

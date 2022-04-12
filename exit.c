@@ -1,4 +1,12 @@
 #include "main.h"
+
+/**
+ * func_exit - simple and basic shell
+ * Return: 1
+* @av: char
+* @num: int
+ */
+
 int func_exit(char *av, int num)
 {
 	char *s = "exit";

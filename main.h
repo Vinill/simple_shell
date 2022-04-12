@@ -18,5 +18,6 @@ int _strlen(char *s);
 int _getenv(void);
 char *get_env(const char *name);
 int _putchar(char c);
+int func_exit(char *av, int num);
 #endif
 

@@ -44,20 +44,20 @@ int _getenv(void)
 
 {
 
-	
+
 	unsigned int i;
 	unsigned int j = 0;
 
 	for (i = 0; environ[i] != NULL; i++)
 
-	while (j <= i)
+
 
 	{
 		write(1, environ[j], _strlen(environ[j]));
 		_putchar('\n');
 		j++;
 	}
-	return(0);
+	return (0);
 }
 
 /**

@@ -1,5 +1,6 @@
-#ifndef HEADER
-#define HEADER
+#ifndef MAIN_H
+#define MAIN_H
+#include <stddef.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -7,9 +8,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-
-
-
 
 extern char **environ;
 
@@ -19,5 +17,6 @@ int exit_func(char command);
 int _strlen(char *s);
 int _getenv(void);
 char *get_env(const char *name);
+int _putchar(char c);
 #endif
 

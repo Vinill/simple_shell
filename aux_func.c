@@ -41,10 +41,35 @@ int _strcmp(char *s1, char *s2)
 */
 
 int _getenv(void)
-{
-	char **s = environ;
 
-	for (; *s; s++)
-		printf("%s\n\n", *s);
+{
+
+
+	unsigned int i;
+	unsigned int j = 0;
+
+	for (i = 0; environ[i] != NULL; i++)
+
+
+
+	{
+		write(1, environ[j], _strlen(environ[j]));
+		_putchar('\n');
+		j++;
+	}
 	return (0);
+}
+
+/**
+* _putchar - writes the character c to stdout
+* @c: The character to print
+*
+* Return: On success 1.
+* On error, -1 is returned, and errno is set appropriately.
+*/
+
+int _putchar(char c)
+
+{
+	return (write(1, &c, 1));
 }

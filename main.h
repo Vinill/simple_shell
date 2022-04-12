@@ -17,5 +17,6 @@ int exit_func(char command);
 int _strlen(char *s);
 int _getenv(void);
 char *get_env(const char *name);
+int _putchar(char c);
 #endif
 

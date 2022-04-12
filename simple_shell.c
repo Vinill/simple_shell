@@ -24,7 +24,7 @@ int main(void)
 		/* buffer[_strlen(buffer) - 1] = '\0'; */
 		token = strtok(buffer, " \n\t");
 		if (!token || (_strcmp(token, "exit") == 0))	/*exit*/
-			exit(EXIT_FAILURE);
+			break;
 		if (!token || (_strcmp(token, "env") == 0)) /*exit*/
 			_getenv();
 

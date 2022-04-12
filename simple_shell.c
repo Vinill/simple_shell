@@ -23,8 +23,8 @@ int main(void)
 			break;
 		/* buffer[_strlen(buffer) - 1] = '\0'; */
 		token = strtok(buffer, " \n\t");
-		if (!token || (_strcmp(token, "exit") == 0)) /*exit*/
-			break;
+		if (!token || (_strcmp(token, "exit") == 0))	/*exit*/
+			exit(EXIT_FAILURE);
 		if (!token || (_strcmp(token, "env") == 0)) /*exit*/
 			_getenv();
 

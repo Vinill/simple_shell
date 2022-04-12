@@ -10,7 +10,7 @@ int main(void)
 	size_t bufsize = 0;
 	int characters;
 	int i = 0;
-
+	int retorno = 0;
 
 	while (1)
 	{
@@ -25,7 +25,7 @@ int main(void)
 		token = strtok(buffer, " \n\t");
 		if (!token || (_strcmp(token, "exit") == 0))	/*exit*/
 			break;
-		if (!token || (_strcmp(token, "env") == 0)) /*exit*/
+		if (!token || (_strcmp(token, "env") == 0)) /*env*/
 			_getenv();
 
 		i = 0;
@@ -36,9 +36,10 @@ int main(void)
 			token = strtok(NULL, " \n\t");
 			i++;
 		}
-		execute(tokens);
+
+		retorno = execute(tokens);
 		free(buffer);
 	}
 	free(buffer);
-	return (0);
+	return (retorno);
 }

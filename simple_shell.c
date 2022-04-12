@@ -11,6 +11,7 @@ int main(void)
 	int characters;
 	int i = 0;
 
+
 	while (1)
 	{
 		if (isatty(0))
@@ -24,6 +25,9 @@ int main(void)
 		token = strtok(buffer, " \n\t");
 		if (!token || (_strcmp(token, "exit") == 0)) /*exit*/
 			break;
+		if (!token || (_strcmp(token, "env") == 0)) /*exit*/
+			_getenv();
+
 		i = 0;
 		while (token != NULL)
 		{
